@@ -1,4 +1,4 @@
-# tinder-coffee-chat
+# Tinder Coffee Chat (Backend) ☕
 
 Tinder coffee chat is an app designed by Team-E for the [BCG Platinion Hackathon 2020.](https://hackathon.bcgplatinion.com/home/)
 
