@@ -5,17 +5,35 @@ from rest_framework.response import Response
 from . import models
 from . import serializers
 
+class HelloView(APIView):
+    """
+    Welcome to the api :) 
+    """
+    def get(self, request):
+        return Response({"status":"active"})
 
 class UserListView(generics.ListAPIView):
+    """
+    Get a list of all users that are registered, 
+    and their availability. 
+    """
     queryset = models.CustomUser.objects.all()
     serializer_class = serializers.UserSerializer
+
+
+class InterestListView(generics.ListAPIView):
+    """
+    Get a list of all users that are registered, 
+    and their availability. 
+    """
+    queryset = models.Interest.objects.all()
+    serializer_class = serializers.InterestSerializer
 
 
 class CurrentUserView(APIView):
     def get(self, request):
         serializer = serializers.UserSerializer(request.user)
         return Response(serializer.data)
-
 
 class GetAvailableUsers(APIView):
     def get(self, request):
@@ -39,5 +57,16 @@ class ToggleAvailability(APIView):
             models.CustomUser.objects.get(id=current_user.id)
         )
         return Response(serializer.data)
+
+
+class CreateTag(APIView):
+    def post(self, request):
+        interest = request.query_params.get('interest_name')
+        print(f"likes {interest}")
+        return Response(serializer.data)
+
+
+
+
 
 
