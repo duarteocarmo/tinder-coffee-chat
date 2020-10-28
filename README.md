@@ -4,6 +4,8 @@ Tinder coffee chat is an app designed by Team-E for the [BCG Platinion Hackathon
 
 This repo contains the Django Rest API used to serve the react frontend. 
 
+The front end can be found in another [repository](https://github.com/Shirakari/tinder-coffee-chat). 
+
 It is undocumented, hacky, and made in a few hours. 
 
 We got second place!🎉
